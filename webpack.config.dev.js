@@ -26,9 +26,9 @@ module.exports = {
     context: config.context,
     entry: config.entry,
     output: {
-        path: path.join(__dirname, 'public/static/build/'),
+        path: path.join(__dirname, 'public/images/'),
         filename: '[name].js',
-        publicPath: 'http://localhost:' + port + '/static/build/'
+        publicPath: 'http://localhost:' + port + '/images/'
     },
     plugins: config.plugins,
     resolve: config.resolve,
