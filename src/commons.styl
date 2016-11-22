@@ -1,0 +1,103 @@
+@import '~nib/index.styl'
+@import '~jeet/styl/index.styl'
+
+global-reset()
+
+
+toolbar-height = 52px
+border-color = #CCCCCC
+
+
+html, body, div, ul, li, input
+  box-sizing border-box
+
+a
+  text-decoration none
+  color inherit
+
+body
+  font-family sans-serif
+
+@keyframes spin {
+  from {transform: rotate(0deg);}
+  to   {transform: rotate(360deg);}
+}
+
+.progress
+  position fixed
+  background white
+  width 100%
+  height 100%
+  line-height 100%
+  z-index 999
+  .icon
+    margin-top 100px
+    text-align center
+    animation spin 3s infinite linear
+
+.toolbar
+  top 0
+  text-align center
+  line-height toolbar-height
+  height toolbar-height
+  border-bottom 1px solid border-color
+  background white
+  width 100%
+
+.category-bar
+  //overflow auto
+  box-shadow #bbb 0 2px 8px
+  ul.categories
+    overflow hidden
+    li.category
+      float left
+      font-size 0.9rem
+      padding 10px 0
+      border-right 1px solid border-color
+      border-bottom 1px solid border-color
+      transition background-color 0.6s
+      background-color white
+      cursor pointer
+    li:hover
+      background-color #FAFAFA
+
+@media screen and (max-width 700px)  // mobile
+  .toolbar
+    position fixed
+  .category-bar
+    margin-top toolbar-height
+    ul.categories
+      li.category
+        width auto
+
+@media screen and (min-width 700px)  // desktop
+  ul.categories
+    li.category
+      width 16.6%
+      text-align center
+
+.body
+  min-height 500px
+  max-width 700px
+  margin 0 auto
+  .post-list
+    margin-bottom 30px
+  .post
+    margin-top 30px
+    margin-bottom 30px
+    .info
+      h3
+        font-size 0.9rem
+        font-weight bold
+      h2
+        font-size 1.8rem
+        line-height 2.2rem
+        font-weight bold
+
+.footer
+  padding 20px
+  text-align center
+  background #242424
+  color white
+  font-size 0.9rem
+  line-height 2rem
