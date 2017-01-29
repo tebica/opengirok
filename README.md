@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-# 정보공개센터 저장소
-=======
 # 정보공개센터 스킨 저장소
->>>>>>> Stashed changes
 
 ## 사용 라이브러리
  - bootstrap3 (bootstrap4 는 IE 10+ 지원)
@@ -14,7 +10,6 @@
  - 서울시 정보소통광장: http://opengov.seoul.go.kr/
  - 대한민국 정보공개: https://www.open.go.kr/
 
-<<<<<<< Updated upstream
 ## 참고사이트 (티스토리)
 - 효성: http://blog.hyosung.com/
 - 한화데이즈: http://blog.hanwhadays.com/
@@ -24,7 +19,3 @@
 
 ## 기타
 - 이전 webpack / jeet / stylus 기반 프로젝트는 old 브렌치에 있음
-=======
-## 기타
- - 이전 webpack / jeet / stylus 기반 프로젝트는 old 브렌치에 있음
->>>>>>> Stashed changes
