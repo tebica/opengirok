@@ -7,11 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>[##_title_##] :: [##_page_title_##]</title>
 
-  <link href="./images/bootstrap.min.css" rel="stylesheet" />
-  <link href="./images/bootstrap-theme.min.css" rel="stylesheet" />
-  <link href="./style.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/superfish/1.7.9/css/superfish.min.css" rel="stylesheet" />
-  <link href="./images/superfish-custom.css" rel="stylesheet" />
+  <link href="./images/bootstrap-theme.min.css" rel="stylesheet" />
+	<link href="./images/superfish-custom.css" rel="stylesheet" />
+  <link href="./style.css" rel="stylesheet" />
 	
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,14 +27,32 @@
   <s_t3>
 
     <!-- nav -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" id="navigation">
-      <div class="container">
+    <nav class="navbar navbar-fixed-top" id="navigation">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 text-center"><img src="./images/logo.jpg"></div>
+        <div class="col-sm-3 text-center">
+					<s_search>
+                <div class="input-group" id="searchbar">
+                  <input type="text" class="form-control" placeholder="Search for..." name="[##_search_name_##]" value="[##_search_text_##]" onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" onclick="[##_search_onclick_submit_##]">
+                      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button>
+                  </span>
+                </div>
+              </s_search>
+			</div>
+    </div>
+</div>
+      <div class="container" id="menubar">
         <div class="navbar-header">
           <button type="button" id="btnToggleSideOff" class="navbar-toggle collapsed" aria-expanded="false" aria-controls="sidebar"> <span class="sr-only">Toggle category</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-          <a class="navbar-brand" href="[##_blog_link_##]">[##_title_##]</a>
+          <!--a class="navbar-brand" href="[##_blog_link_##]">[##_title_##]</a-->
         </div>
-
+         <!-- category_list -->
 				[##_category_list_##]
+				<!-- / category_list -->
 				
         <ul class="nav navbar-nav navbar-right navbar-collapse collapse">
           <li data-toggle="tooltip" data-placement="bottom" title="Login" class="navigation-guest"> <a href="https://www.tistory.com/login"><span class="glyphicon glyphicon glyphicon-off" aria-hidden="true"></span></a> </li>
@@ -466,19 +484,6 @@
                 </div>
               </div>
             </s_sidebar_element>
-            <s_sidebar_element>
-              <!-- Search -->
-              <s_search>
-                <div class="input-group" id="searchbar">
-                  <input type="text" class="form-control" placeholder="Search for..." name="[##_search_name_##]" value="[##_search_text_##]" onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }" />
-                  <span class="input-group-btn">
-                    <button class="btn btn-default" type="button" onclick="[##_search_onclick_submit_##]">
-                      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                    </button>
-                  </span>
-                </div>
-              </s_search>
-            </s_sidebar_element>
 
             <s_sidebar_element>
               <!-- Visitor Counter -->
@@ -571,17 +576,14 @@ The Center for Fredom of Information and Transparent Society
       <div class="device-md visible-md"></div>
       <div class="device-lg visible-lg"></div>
     </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="./images/bootstrap.min.js"></script>
-    <!-- tool -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/superfish/1.7.9/js/superfish.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.3/jquery.flexslider.min.js"></script>
     <script src="./images/dsScript.js"></script>
-
     <script src="./images/dsScriptArticle.js"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/superfish/1.7.9/js/superfish.min.js"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.3/jquery.flexslider.min.js"></script>
-			<script>
+
+		<script>
 				jQuery(document).ready(function(){
 					//jQuery('ul.category_list').superfish();
 					 jQuery('.td_selectedpost_1').addClass('flexslider').append('<ul class="slides"></ul>');
@@ -594,9 +596,7 @@ The Center for Fredom of Information and Transparent Society
     					animation: "slide"
   					});
 				});
-				
-
-			</script>
+		</script>
   </s_t3>
 </body>
 
