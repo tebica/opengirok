@@ -1,0 +1,245 @@
+//  This dsScript for BooTistrap 1.02
+//  somnus950301@gmail.com
+//  http://devsomnus.tistory.com
+jQuery(window).load(function() {
+  $('#loading').fadeOut(500);
+});
+
+jQuery(document).ready(function() {
+  //  Detect User State
+  //  15.01.01
+  //  userState info - 0: not log in, 1: logged-in, 2: admin
+  var userState;
+  (function() {
+    //  length info - 3: not log in, 4: logged-in
+    var trg = jQuery("#tistorytoolbarid");
+    userState = trg.find(".tt_menubar_logout").children(".tt_menubar_link_tit").text().length - 3;
+    if (userState) {
+      var check = location.href.split(".com")[0] + ".com";
+      trg.find(".tt_menubar_myblog").find("li").children("a").each(function() {
+        if (jQuery(this).attr("href") == check) {
+          userState = 2;
+          return false;
+        }
+      });
+    }
+  })();
+
+  //  Adapt Nav Menu
+  //  15.01.01
+  (function() {
+    var trg = jQuery("#navigation .container").children("ul")[0];
+    var list = [];
+    jQuery(trg).children("li").each(function(i) {
+      var trg = jQuery(this).children("a");
+      var title = trg.text();
+      var link = trg.attr("href");
+      list[i] = [title, link];
+    });
+
+    jQuery(trg).addClass("nav navbar-nav navbar-collapse collapse");
+    trg = jQuery("#sideNav");
+    if (list.length == 0) {
+      trg.remove();
+    } else {
+      trg = trg.children(".list-group");
+      for (var i = 0; i < list.length; i++) {
+        trg.append("<a class='list-group-item' href='" + list[i][1] + "'>" + list[i][0] + "</a>")
+      }
+    }
+
+  })();
+
+  //  Adapt Tag
+  //  15.01.01
+  (function() {
+    jQuery(".article-tag a").wrapInner("<span class='label label-default'></span>");
+  })();
+
+  //  Nav Menu Panel Responsive
+  //  15.01.01
+  //  This block must be after "Detect User State"
+  (function() {
+    var trg = jQuery("#navigation");
+    switch (userState) {
+      case 2:
+        trg.find("li.navigation-admin").show();
+      case 1:
+        trg.find("li.navigation-login").show();
+        trg.find("li.navigation-guest").hide();
+        break;
+    }
+  })();
+
+  //  Show logged-in alrert in reply form
+  //  15.01.01
+  //  This block must be after "Detect User State"
+  (function() {
+    if (userState) {
+      jQuery("#main").addClass('logged-in');
+      //jQuery(".rpForm-loggedIn").show();
+    }
+  })();
+
+  //  Toggle Secret Button
+  //  15.01.01
+  (function() {
+    jQuery(".rpForm-secret").each(function() {
+      var chbx = jQuery(this).find("input");
+      var btn = jQuery(this).find("button");
+      btn.click(function() {
+        if (btn.hasClass("active")) {
+          chbx.attr("checked", false);
+          btn.removeClass("active btn-primary").text("Secret?").children("span").remove();
+        } else {
+          chbx.attr("checked", true);
+          btn.addClass("active btn-primary").text("Secret!").append("<span class='glyphicon glyphicon-ok pull-right' style='padding-right:10px' aria-hidden='true'></span>");
+        }
+      });
+    });
+  })();
+
+  //  Article Admin Panel
+  //  15.01.01
+  (function() {
+    var trg = jQuery(".article-admPanel-state");
+    if (!trg.length) {
+      return
+    }
+    //  length info - 2: publish, 3: private
+    var nowState = 3 - trg.attr("data-state").length;
+    if (nowState) {
+      trg.attr("title", "Switch to Private").addClass("text-success");
+    } else {
+      trg.attr("title", "Switch to Publish").addClass("text-warning");
+    }
+  })();
+
+  //  Glyphicon Tooltip
+  //  15.01.01
+  (function() {
+    jQuery(".glyphicon-link").parent().attr("data-toggle", "tooltip").attr("data-placement", "top").attr("title", "Link");
+    jQuery(".glyphicon-comment").parent().attr("data-toggle", "tooltip").attr("data-placement", "top").attr("title", "Comment");
+    jQuery(".glyphicon-remove").parent().attr("data-toggle", "tooltip").attr("data-placement", "top").attr("title", "Remove");
+  })();
+
+  //  Fill Side Off
+  //  15.01.01
+  (function() {
+    jQuery("#sidebar").children(".panel").clone().appendTo("#sideOff");
+  })();
+
+  //  Panel Adjust
+  //  15.01.01
+  //  This block must be after "Fill Side Off"
+  (function() {
+    jQuery("#sidebar").children(".panel").addClass("hidden-xs")
+  })();
+
+  //  Toggle Side Off
+  //  15.01.01
+  (function() {
+    jQuery("#btnToggleSideOff").click(function() {
+      var trg = jQuery("#sideOff");
+      if (trg.is(":visible")) {
+        trg.animate({
+          width: 'toggle'
+        }, 300);
+        jQuery("#blackCover").fadeOut(300);
+      } else {
+        trg.animate({
+          width: 'toggle'
+        }, 300);
+        jQuery("#blackCover").fadeIn(300);
+      }
+    });
+  })();
+
+  //  Count Revise Only Digit
+  //  15.01.01
+  (function() {
+    jQuery("span.badge").text(function() {
+      return jQuery(this).text().replace(/\D/g, "");
+    });
+  })();
+
+  //  Inint BS JS Components
+  //  BS Tooltip
+  //  This block must be after all tooltip setting is done
+  jQuery("[data-toggle='tooltip']").tooltip();
+});
+
+// Booti Edition
+// 15.03.07
+jQuery(document).ready(function() {
+  if ((!document.getElementById("ttGnb")) && (document.getElementById("ttCanvas"))) {
+    var item = function(title, link, img, ctt, date) {
+      this.title = title;
+      this.link = link;
+      this.img = img;
+      this.ctt = ctt;
+      this.date = date;
+    };
+    var tbt = jQuery("#ttCanvas").find(".tbt");
+    var items = [];
+    var listTitle = [];
+    tbt.each(function(i) {
+      items[i] = [];
+
+      var listT = jQuery(this).find("tt-item-title");
+      if (listT.is(":visible")) listTitle[i] = listT.text();
+      else listTitle[i] = undefined;
+
+      jQuery(this).children("ul").children("li").each(function(j) {
+        var it = jQuery(this);
+        var title = it.find(".tt-post-title").text();
+        var link = it.find(".tt-post-title").children("a").attr("href");
+        var img = it.find("img").attr("src");
+        var ctt = it.find(".tt-post-summary").text();
+        var date = it.find(".tt-post-date").text();
+        items[i][j] = new item(title, link, img, ctt, date);
+      });
+    });
+
+    function itemHtml(item) {
+      var html =
+        "<div class='col-sm-6 col-md-4'>" +
+        "<div class='thumbnail'>" +
+        "<img src='" + item.img + "'>" +
+        "<div class='caption'>" +
+        "<a href='" + item.link + "'>" +
+        "<h3>" + item.title + "</h3>" +
+        "</a>" +
+        "<p>" + item.ctt + "</p>" +
+        "<p>" + item.date + "</p>" +
+        "</div></div></div>";
+      return html;
+    }
+
+    jQuery("#ttCanvas").parent().html("<div id='tbtCanvas'>");
+    var head = jQuery("#tbtCanvas");
+    head.css("margin-top", "40px");
+
+    for (var i = 0; i < items.length; i++) {
+      if (listTitle[i])
+        head.append("<div class='page-header'>" +
+          listTitle[i] + "</div>");
+
+      for (var j = 0; j < items[i].length; j++)
+        head.append(itemHtml(items[i][j]));
+    }
+
+    function equalHeight(group) {
+      var tallest = 0;
+      group.each(function() {
+        var thisHeight = $(this).height();
+        if (thisHeight > tallest) tallest = thisHeight;
+      });
+      group.each(function() {
+        $(this).height(tallest);
+      });
+    }
+
+    equalHeight($("#tbtCanvas .thumbnail img"));
+  }
+});
