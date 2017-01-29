@@ -285,7 +285,7 @@
                       <a href="#" onclick="[##_article_rep_rp_link_##]">
                         <s_rb_count>
                           [##_article_rep_rp_cnt_##] <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
-                          <s_rb_count>
+                          </s_rb_count>
                       </a>
                     </li>
                     <li>
@@ -579,23 +579,24 @@ The Center for Fredom of Information and Transparent Society
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/superfish/1.7.9/js/superfish.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.3/jquery.flexslider.min.js"></script>
     <script src="./images/dsScript.js"></script>
     <script src="./images/dsScriptArticle.js"></script>
 
 		<script>
 				jQuery(document).ready(function(){
 					//jQuery('ul.category_list').superfish();
-					 jQuery('.td_selectedpost_1').addClass('flexslider').append('<ul class="slides"></ul>');
-					jQuery('.TD_toparticle').each(function(){
-						jQuery('.td_selectedpost_1 .slides').append('<li>' + jQuery(this).html() + '</li>');
-						jQuery(this).remove();
-					});
-					jQuery('.td_selectedpost_1 .td_clear').remove();
-					 jQuery('.flexslider').flexslider({
-    					animation: "slide"
-  					});
+					 $('.td_selectedpost_1').addClass('carousel slide').attr('data-ride','carousel')
+					 $('.slide .item').first().addClass('active')
+					 $('.slide .item').wrapAll(' <div class="carousel-inner" role="listbox"\>');
+					 $('.td_selectedpost_1 .td_clear').remove();
 				});
+			 /*
+			  $('.TD_toparticle').each(function(){
+						$('.td_selectedpost_1 .slides').append('<li>' + jQuery(this).html() + '</li>');
+						$(this).remove();
+					});
+				*/
+
 		</script>
   </s_t3>
 </body>
