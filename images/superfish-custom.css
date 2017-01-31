@@ -6,6 +6,7 @@
 }
 .category_list li {
 	position: relative;
+
 }
 .category_list ul {
 	position: absolute;
@@ -35,7 +36,6 @@
 /*** DEMO SKIN ***/
 .category_list {
 	float: left;
-	margin-bottom: 1em;
 }
 .category_list ul {
 	box-shadow: 2px 2px 6px rgba(0,0,0,.2);
@@ -54,7 +54,6 @@
 	color: #13a;
 }
 .category_list li {
-	background: #BDD2FF;
 	white-space: nowrap; /* no need for Supersubs plugin */
 	*white-space: normal; /* ...unless you support IE7 (let it wrap) */
 	-webkit-transition: background .2s;

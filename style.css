@@ -1,12 +1,16 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 html, body {
   height: 100%;
-	background-color: #F2F2F2;
+	background-color: #FFFFFF;
 }
 body {
-  padding-top: 180px;
+  font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", Dotum, Helvetica, Arial, sans-serif;
   overflow-x: hidden;
 }
-
+.container{
+	background-color: #F2F2F2;
+}
+#tistorytoolbarid {display: none;}
 /*
  *  Blog form
  *  --------------------------
@@ -134,7 +138,6 @@ body {
  *  Global
  *  --------------------------
  */
-
 .margin-top {
   margin-top: 40px;
 }
@@ -148,10 +151,14 @@ body {
  *  --------------------------
  */
 
+#topbar{
+	padding: 20px;
+}
 #menubar {
   width: 100%;
+}
+#menubar, #menubar .container{
   background-color: #E6E7E9;
-  z-index: 99;
 }
 #navigation .navigation-admin, #navigation .navigation-login {
   display: none;
@@ -168,22 +175,33 @@ body {
 #guestbook .rpForm-loggedIn {
   padding-left: 15px;
 }
-#footer {
-  font-size: 0.9em;
-  background-color: #eee;
-  margin-top: 40px;
-  padding: 40px 0;
+#footer .container {
+  font-size: 1em;
+	line-height:180%;
+  background-color: #A8A9AD;
 }
-#blackCover {
-  display: none;
-  position: fixed;
-  background-color: rgba(0, 0, 0, 0.66);
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
+#footer .ft-top{
+	padding:40px 0;
 }
+#footer .ft-top-lt{
+	padding:20px;
+}
+#footer .ft-top-md{
+  font-size: 0.8em;
+	color:#595A5C;
+}
+#footer .ft-bottom{
+  font-size: 1.3em;
+  background-color: #414143;
+  color: #E2E2E2;
+  height: 50px;
+  padding: 12px 0;
+  font-weight: 200;
+}
+#footer .ft-bottom-rt{
+	text-align:right;
+}
+
 #sideOff {
   display: none;
   position: fixed;
@@ -198,19 +216,15 @@ body {
   border-right: 1px solid #eee;
 }
 
-#footer{
-  text-align:center;
-	line-height:180%;
-}
 /*****************/
 /* 드랍다운 메뉴 */
 /******************/
 .navbar .link_tit {
 	display: none;
 }
-.navbar .category_list > li {
-	float: left;
-}
 .navbar .category_list .c_cnt {
 	display: none;
 }
+/*.navbar .category_list > li {
+	float: left;
+}*/
