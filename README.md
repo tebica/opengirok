@@ -1,5 +1,8 @@
 # 정보공개센터 스킨 저장소
 
+## 작업 공간
+- http://rmspgkdi.tistory.com/
+
 ## 사용 라이브러리
  - bootstrap3 (bootstrap4 는 IE 10+ 지원)
  - jQuery1 latest (jQuery 2 부터는 IE 9+ 지원)
@@ -15,7 +18,7 @@
 - 한화데이즈: http://blog.hanwhadays.com/
 - 울산광역시: http://blog.ulsan.go.kr/
 - 자유광장: http://www.freedomsquare.co.kr/
-- : http://koreancontent.kr/
+- 상상발전소: http://koreancontent.kr/
 
 ## 기타
 - 이전 webpack / jeet / stylus 기반 프로젝트는 old 브렌치에 있음
