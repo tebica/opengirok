@@ -8,7 +8,7 @@ body {
   overflow-x: hidden;
 }
 .container{
-	background-color: #F2F2F2;
+	background-color: #ffffff;
 }
 #tistorytoolbarid {display: none;}
 /*
@@ -163,6 +163,10 @@ body {
 #navigation .navigation-admin, #navigation .navigation-login {
   display: none;
 }
+/* 로고부분 위치 수정 */ 
+#navigation .col-sm-9.text-center a img {
+	float: left;
+}
 #main {
   display: flex;
   flex-direction: column;
@@ -177,18 +181,22 @@ body {
 }
 #footer .container {
   font-size: 1em;
-	line-height:180%;
-  background-color: #A8A9AD;
+	background-color: #E6E7E9;
 }
 #footer .ft-top{
-	padding:40px 0;
+	padding:50px 0;
 }
 #footer .ft-top-lt{
-	padding:20px;
+	padding:0 20px;
 }
 #footer .ft-top-md{
   font-size: 0.8em;
-	color:#595A5C;
+	line-height:200%;
+	color:#696A6C;
+}
+#footer .ft-top-bt img{
+	width:250px;
+	margin: 30px 0;
 }
 #footer .ft-bottom{
   font-size: 1.3em;
@@ -200,6 +208,7 @@ body {
 }
 #footer .ft-bottom-rt{
 	text-align:right;
+	font-size: 14px;
 }
 
 #sideOff {
@@ -216,6 +225,21 @@ body {
   border-right: 1px solid #eee;
 }
 
+/*   Carousel  */
+.carousel-indicators{
+	left:40px;
+}
+.carousel-indicators li{
+	background-color:#898A8F;
+}
+.carousel-indicators .active{
+		background-color:#F48900;
+}
+
+.carousel-control.right, .carousel-control.left{
+	background-image:none;
+}
+
 /*****************/
 /* 드랍다운 메뉴 */
 /******************/
@@ -228,3 +252,141 @@ body {
 /*.navbar .category_list > li {
 	float: left;
 }*/
+
+/*****************/
+/* 동동 수정 */
+/******************/
+
+.carousel-indicators .active {
+  background-color: #eb008b;
+}
+.carousel-indicators li:not(:nth-child(1)) {
+	margin-left: 10px;
+}
+.TD_more {
+	background-color: #FFF !important;	
+}
+.TD_more_title {
+ border-left: none !important;
+}
+
+#TD_content .TD_more {
+	padding-top: 30px;
+  border-top: 1px solid;
+}
+
+/* 이미지 컨테이너 */
+
+#inf-img-conainer {
+  background-color: #343745;
+	padding: 40px 0px;
+}
+#inf-img-conainer .img-container {
+	background-color: #343745;
+	
+}
+#inf-img-conainer .img-container .img-wrap {
+  display: inline-block;
+	text-align:center;
+	width: 33%;
+}
+
+.TD_recent .td_slidemargin {
+	margin-bottom: 35px;
+}
+
+
+@media screen and ( max-width: 767px) { 
+	#inf-img-conainer .img-container .img-wrap { 
+	  width: 100%;
+	}
+ 	#inf-img-conainer .img-container .img-wrap:not(:nth-child(1)) {  
+    margin-top: 30px;
+	}
+}
+
+/* 푸터 */
+footer#footer {
+	background-color: #E6E7E9;
+}
+.footer-info-container {
+	background-color: #414143;
+}
+
+/* 헤더 */
+
+#menubar, #menubar .container {
+	background-color: #FFF;
+}
+#menubar {
+	border-bottom: 2px solid #eb008b;
+}
+
+.navbar-right.navbar-collapse.collapse {
+  position: absolute;
+  top: 10px;
+  right: 55px;
+}
+#center-nav-container {
+ display: inline-block;
+ width: 100%;
+ padding-top: 10px;
+}
+#center-nav-container .nav-title{
+	margin-left: -25px;
+  min-width: 920px;
+}
+#center-nav-container .nav-title a.link_item {
+	margin-right: 11%;
+}
+#center-nav-container .nav-title a.link_item:active,
+#center-nav-container .nav-title a.link_item:focus,
+#center-nav-container .nav-title a.link_item:hover,
+#center-nav-container .flipped-nav .sub_category_list a.link_sub_item:active,
+#center-nav-container .flipped-nav .sub_category_list a.link_sub_item:focus
+{
+	text-decoration: none;
+	color: initial;
+	border-bottom: initial;
+}
+#center-nav-container .nav-title a.link_item:last-child {
+	margin-right: initial;
+}
+#center-nav-container .nav-title .link_item {
+	color: #000;
+	font-size: 15px;
+  font-weight: bold;
+	font-family: 'notosans';
+}
+#center-nav-container .flipped-nav .sub_category_list:nth-child(2) {
+	width: 25%;
+}
+#center-nav-container .flipped-nav .sub_category_list {
+	margin-left: -25px;
+	display: inline-block;
+	width: 20%;
+}
+
+#center-nav-container .flipped-nav {
+	display: block;
+	background: #594B43;
+	position: absolute;
+	width: 100%;
+	left: 0px;
+	padding: 20px 55px;
+	border-top: 2px solid #eb008b;
+	display: none;
+}
+#center-nav-container .flipped-nav.active {
+	display: block;
+}
+#center-nav-container .flipped-nav .sub_category_list li {
+	list-style: none;
+	margin-bottom: 10px;
+}
+#center-nav-container .flipped-nav .sub_category_list a.link_sub_item {
+	color: #FFF;
+}
+#center-nav-container .c_cnt {
+	display: none !important;
+}
