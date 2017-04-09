@@ -61,6 +61,7 @@
 					</ul>
 					<div class="flipped-nav">
 
+
 					</div>
 				</div>
 						
@@ -641,22 +642,36 @@
 			var new_nav_container = $('#center-nav-container');			
 			
 			category_lists.each(function(i) {
-				new_nav_container.find('.nav-title').append($( this ).find('.link_item'));
-				$( this ).find('.sub_category_list').length > 0 ? new_nav_container.find('.flipped-nav').append($( this ).find('.sub_category_list')) : new_nav_container.find('.flipped-nav').append('<ul class="sub_category_list"></li>');
+				new_nav_container.find('.nav-title').append($( this).find('.link_item').wrap( "<li class='link_item_li'></li>" ));
 
+
+				
+				$( this ).find('.sub_category_list').length > 0 ? new_nav_container.find('.flipped-nav').append($( this ).find('.sub_category_list')) : new_nav_container.find('.flipped-nav').append('<ul class="sub_category_list"></ul>');
+
+			}).promise().done(function () { 
+				$('.link_item').wrap( "<li class='link_item_li'></li>" )
 			});
-			
-			$('#center-nav-container .link_item').hover(
-		    function() {
-					console.log("hello");
-					new_nav_container.find('.flipped-nav').addClass('active');
-				},
-				function() {
-					new_nav_container.find('.flipped-nav').removeClass('active');
-				}
-			 );
-			
-			
+		   $('.nav-title')
+          .mouseover(function() {
+            new_nav_container.find('.flipped-nav').addClass('active');
+          })
+          .mouseout(function() {
+            if ( $(this).attr('class') !== 'nav-title') {
+              new_nav_container.find('.flipped-nav').removeClass('active');
+            }
+          });
+			$('.flipped-nav')
+          .mouseover(function() {
+            new_nav_container.find('.flipped-nav').addClass('active');
+          })
+          .mouseout(function() {
+            if ($(this).attr('class') !== 'link_item') {
+              new_nav_container.find('.flipped-nav').removeClass('active');
+            }
+          });
+			$('#topbar').mouseover(function() {
+					              new_nav_container.find('.flipped-nav').removeClass('active');
+			})
 			
 			//setup carousel
            $('.td_selectedpost_1').addClass('carousel slide').attr('id', 'carousel-id').attr('data-ride','carousel')
