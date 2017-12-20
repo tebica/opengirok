@@ -1,13 +1,5 @@
-//  This dsScript for BooTistrap 1.02
-//  somnus950301@gmail.com
-//  http://devsomnus.tistory.com
-jQuery(window).load(function() {
-  $('#loading').fadeOut(500);
-});
-
 jQuery(document).ready(function() {
   //  Detect User State
-  //  15.01.01
   //  userState info - 0: not log in, 1: logged-in, 2: admin
   var userState;
   (function() {
@@ -51,13 +43,11 @@ jQuery(document).ready(function() {
   })();
 
   //  Adapt Tag
-  //  15.01.01
   (function() {
     jQuery(".article-tag a").wrapInner("<span class='label label-default'></span>");
   })();
 
   //  Nav Menu Panel Responsive
-  //  15.01.01
   //  This block must be after "Detect User State"
   (function() {
     var trg = jQuery("#navigation");
@@ -72,7 +62,6 @@ jQuery(document).ready(function() {
   })();
 
   //  Show logged-in alrert in reply form
-  //  15.01.01
   //  This block must be after "Detect User State"
   (function() {
     if (userState) {
@@ -82,7 +71,6 @@ jQuery(document).ready(function() {
   })();
 
   //  Toggle Secret Button
-  //  15.01.01
   (function() {
     jQuery(".rpForm-secret").each(function() {
       var chbx = jQuery(this).find("input");
@@ -100,7 +88,6 @@ jQuery(document).ready(function() {
   })();
 
   //  Article Admin Panel
-  //  15.01.01
   (function() {
     var trg = jQuery(".article-admPanel-state");
     if (!trg.length) {
@@ -116,7 +103,6 @@ jQuery(document).ready(function() {
   })();
 
   //  Glyphicon Tooltip
-  //  15.01.01
   (function() {
     jQuery(".glyphicon-link").parent().attr("data-toggle", "tooltip").attr("data-placement", "top").attr("title", "Link");
     jQuery(".glyphicon-comment").parent().attr("data-toggle", "tooltip").attr("data-placement", "top").attr("title", "Comment");
@@ -124,20 +110,17 @@ jQuery(document).ready(function() {
   })();
 
   //  Fill Side Off
-  //  15.01.01
   (function() {
     jQuery("#sidebar").children(".panel").clone().appendTo("#sideOff");
   })();
 
   //  Panel Adjust
-  //  15.01.01
   //  This block must be after "Fill Side Off"
   (function() {
     jQuery("#sidebar").children(".panel").addClass("hidden-xs")
   })();
 
   //  Toggle Side Off
-  //  15.01.01
   (function() {
     jQuery("#btnToggleSideOff").click(function() {
       var trg = jQuery("#sideOff");
@@ -155,13 +138,6 @@ jQuery(document).ready(function() {
     });
   })();
 
-  //  Count Revise Only Digit
-  //  15.01.01
-  (function() {
-    jQuery("span.badge").text(function() {
-      return jQuery(this).text().replace(/\D/g, "");
-    });
-  })();
 
   //  Inint BS JS Components
   //  BS Tooltip
@@ -170,7 +146,6 @@ jQuery(document).ready(function() {
 });
 
 // Booti Edition
-// 15.03.07
 jQuery(document).ready(function() {
   if ((!document.getElementById("ttGnb")) && (document.getElementById("ttCanvas"))) {
     var item = function(title, link, img, ctt, date) {
