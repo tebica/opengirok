@@ -13,14 +13,10 @@
 
   <link href="./images/superfish-custom.css" rel="stylesheet" />
   <link href="./style.css" rel="stylesheet" />
-  
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  
   
 </head>
 
@@ -82,8 +78,6 @@
 					</ul>
 					<div class="flipped-nav">
 						<div class="container"></div>
-
-
 					</div>
 				</div>
 						
@@ -93,8 +87,6 @@
             <li data-toggle="tooltip" data-placement="bottom" title="Admin" class="navigation-admin"> <a href="[##_owner_url_##]"><span class="glyphicon glyphicon glyphicon-cog" aria-hidden="true"></span></a> </li>
             <li data-toggle="tooltip" data-placement="bottom" title="Logout" class="navigation-login"> <a href="https://www.tistory.com/logout"><span class="glyphicon glyphicon glyphicon-off" aria-hidden="true"></span></a> </li>
         </ul>
-        
-      
 
       </div> <!-- /container -->
       </div>
@@ -166,7 +158,6 @@
               </div>
             </div>
           </s_tag>
-          <!-- /tags -->
           
           <!-- guestbook -->
           <s_guest>
@@ -216,9 +207,8 @@
                   <button class="btn btn-default btn-block" onclick="[##_guest_onclick_submit_##]">Submit</button>
                 </div>
               </s_guest_input_form>
-              <!-- /guestbook input form -->
             </div>
-            <!-- guestbook contetn -->
+            <!-- guestbook contents -->
             <s_guest_container>
               <s_guest_rep>
                 <div class="row margin-top rpList [##_guest_rep_class_##]" id="[##_guest_rep_id_##]">
@@ -260,9 +250,9 @@
                 </div>
               </s_guest_rep>
             </s_guest_container>
-            <!-- /guestbook contetn -->
+            <!-- /guestbook contents -->
           </s_guest>
-          <!-- /guestbook-->
+
           <!-- article protected -->
           <s_article_protected>
             <div class="entryProtected">
@@ -281,7 +271,7 @@
               </div>
             </div>
           </s_article_protected>
-          <!-- /article protected -->
+
           <!-- article -->
           <s_article_rep>
             <div class="row article">
@@ -457,7 +447,7 @@
             </div>
           </s_article_rep>
           <!-- /article -->
-          <!-- pasing -->
+
           <s_paging>
             <div class="row">
               <div class="col-xs-12">
@@ -479,12 +469,12 @@
               </div>
             </div>
           </s_paging>
-          <!-- /pasing -->
-            <s_index_article_rep>
+
+  <s_index_article_rep>
     <div class="list_content">
-        <s_article_rep_thumbnail>
+        <!--s_article_rep_thumbnail>
             <img src="[##_article_rep_thumbnail_url_##]">
-        </s_article_rep_thumbnail>
+        </s_article_rep_thumbnail-->
 
         <a href="[##_article_rep_link_##]" class="link_post">
             <strong class="tit_post">[##_article_rep_title_##]</strong>
@@ -500,8 +490,6 @@
         </div>
     </div>
 </s_index_article_rep>
-            
-            
             
         </div>
         <!-- #sidebar -->
@@ -562,7 +550,6 @@
                 </div>
               </div>
             </s_sidebar_element>
-
 
             <s_sidebar_element>
               <!-- Calender -->
@@ -654,8 +641,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/superfish/1.7.9/js/superfish.min.js"></script>
-    <script src="./images/dsScript.js"></script>
-    <script src="./images/dsScriptArticle.js"></script>
+    <script src="./images/script.js"></script>
 
     <script>
 	
@@ -663,36 +649,25 @@
 			var category_lists = $('.category_list > li');
 			var sub_category_lists = $('.category_list .sub_category_list');
 			var new_nav_container = $('#center-nav-container');			
-			
 			var m_navbar = $('.navbar-dg')
 			
 			category_lists.each(function(i) {
 				
 				var items = $(this).find('.link_item')
-			
 				var m_items = items.clone();
 				var pc_list = $( this ).find('.sub_category_list');
 				
 				var mobile_list = $( this ).find('.sub_category_list').clone()
 				
 				new_nav_container.find('.nav-title').append(items.wrap( "<li class='link_item_li'></li>" ));
-
-		
       			
 				if ( mobile_list.length > 0 ) {
 					  m_navbar.find('ul.nav.navbar-nav').append(m_items.wrap( "<li class='nav-item dropdown'></li>" ).append(mobile_list)).promise().done(function() {
-					
 				});
-				
 					
 				} else {
   				m_navbar.find('ul.nav.navbar-nav').append(m_items.wrap( "<li class='nav-item dropdown'></li>" ));
-					
 				}
-
-//         console.log(        m_navbar.find('ul.nav.navbar-nav li.nav-item') );
-												
-//							console.log($( this ).find('.sub_category_list') )
 
 			$( this ).find('.sub_category_list').length > 0 ? new_nav_container.find('.flipped-nav .container').append(pc_list) : new_nav_container.find('.flipped-nav .container').append('<ul class="sub_category_list"></ul>');
 
@@ -700,7 +675,6 @@
 
 			}).promise().done(function () { 
 				console.log($('.navbar-dg .nav.navbar-nav').find('.link_item_li'))
-
         $('.link_item').wrap( "<li class='link_item_li'></li>" )
 
 			});
@@ -734,7 +708,6 @@
            $('.slide .item').wrapAll(' <div class="carousel-inner" role="listbox"\>');
            $('.td_selectedpost_1 .td_clear').remove();
 
-
            // create dots to control carousel
            var cnt=0
            $('#carousel-id').append('<ol class="carousel-indicators"></ol>')
@@ -754,15 +727,10 @@
            $('#carousel-btn .pause').click(function () {
                $('#carousel-id').carousel('pause');
            });
-			
-			
-		
 		});
-			
 
     </script>
   </s_t3>
 
 </body>
-
 </html>
