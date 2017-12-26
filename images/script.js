@@ -70,23 +70,6 @@ jQuery(document).ready(function() {
     }
   })();
 
-  //  Toggle Secret Button
-  (function() {
-    jQuery(".rpForm-secret").each(function() {
-      var chbx = jQuery(this).find("input");
-      var btn = jQuery(this).find("button");
-      btn.click(function() {
-        if (btn.hasClass("active")) {
-          chbx.attr("checked", false);
-          btn.removeClass("active btn-primary").text("Secret?").children("span").remove();
-        } else {
-          chbx.attr("checked", true);
-          btn.addClass("active btn-primary").text("Secret!").append("<span class='glyphicon glyphicon-ok pull-right' style='padding-right:10px' aria-hidden='true'></span>");
-        }
-      });
-    });
-  })();
-
   //  Article Admin Panel
   (function() {
     var trg = jQuery(".article-admPanel-state");

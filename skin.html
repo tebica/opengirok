@@ -8,7 +8,6 @@
   <title>[##_title_##] :: [##_page_title_##]</title>
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/superfish/1.7.9/css/superfish.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
   <link href="./images/superfish-custom.css" rel="stylesheet" />
@@ -105,7 +104,7 @@
                 <div class="list-group">
                   <s_list_rep>
                     <a class="list-group-item" href="[##_list_rep_link_##]">
-                      [##_list_rep_regdate_##] - [##_list_rep_title_##] by [##_list_rep_author_##]
+                      [##_list_rep_regdate_##] - [##_list_rep_title_##] <!--by [##_list_rep_author_##]-->
                       <span class="badge pull-right">[##_list_rep_rp_cnt_##]</span>
                     </a>
                   </s_list_rep>
@@ -161,96 +160,7 @@
           
           <!-- guestbook -->
           <s_guest>
-            <div class="row rpForm" id="guestbook">
-              <div class="col-xs-12">
-                <h4 class="page-header">
-                  <b>Guest book</b>
-                </h4>
-              </div>
-              <!-- guestbook input form -->
-              <s_guest_input_form>
-                <div class="col-xs-8 col-md-10 rpForm-loggedIn text-center">
-                  <div>You logged-in!<span class="glyphicon glyphicon-ok pull-right" aria-hidden="true"></span>
-                  </div>
-                </div>
-                <s_guest_member>
-                  <s_guest_form>
-                    <div class="col-xs-6 col-md-3 rpForm-name">
-                      <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
-                        <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" name="[##_guest_input_name_##]" value="[##_guest_name_##]">
-                      </div>
-                    </div>
-                    <div class="col-xs-6 col-md-3 rpForm-password">
-                      <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
-                        <input type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1" name="[##_guest_input_password_##]" value="[##_guest_password_##]">
-                      </div>
-                    </div>
-                    <div class="col-xs-8 col-md-4 rpForm-link">
-                      <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></span>
-                        <input type="text" class="form-control" placeholder="Link" aria-describedby="basic-addon1" name="[##_guest_input_homepage_##]" value="[##_guest_homepage_##]">
-                      </div>
-                    </div>
-                  </s_guest_form>
-                </s_guest_member>
-                <div class="col-xs-4 col-md-2 co rpForm-secret">
-                  <input type="checkbox" name="[##_rp_input_is_secret_##]">
-                  <button class="btn btn-default btn-block rpForm-secret">Secret?</button>
-                </div>
-                <div class="clearfix"></div>
-                <div class="col-xs-12 col-sm-10 rpForm-body">
-                  <textarea class="form-control" rows="3" name="[##_guest_textarea_body_##]"></textarea>
-                </div>
-                <div class="col-xs-12 col-sm-2 rpForm-submit">
-                  <button class="btn btn-default btn-block" onclick="[##_guest_onclick_submit_##]">Submit</button>
-                </div>
-              </s_guest_input_form>
-            </div>
-            <!-- guestbook contents -->
-            <s_guest_container>
-              <s_guest_rep>
-                <div class="row margin-top rpList [##_guest_rep_class_##]" id="[##_guest_rep_id_##]">
-                  <div class="col-xs-12">
-                    <b>[##_guest_rep_name_##]</b>
-                    <span class="pull-right">[##_guest_rep_date_##]
-                      <a href="#" onclick="[##_guest_rep_onclick_delete_##]">
-                        <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
-                    </a>
-                    <a href="#" onclick="[##_guest_rep_onclick_delete_##]">
-                      <span class="glyphicon glyphicon-remove text-danger" aria-hidden="true"></span>
-                    </a>
-                    </span>
-                  </div>
-                  <div class="col-xs-12">
-                    <p>[##_guest_rep_desc_##]</p>
-                  </div>
-                  <!-- guestbook reply -->
-                  <s_guest_reply_container>
-                    <div class="col-xs-12">
-                      <s_guest_reply_rep>
-                        <div class="row">
-                          <div class="col-xs-11 col-xs-offset-1">
-                            <b>[##_guest_rep_name_##]</b>
-                            <span class="pull-right">[##_guest_rep_date_##]
-                              <a href="#" onclick="[##_guest_rep_onclick_delete_##]">
-                                <span class="glyphicon glyphicon-remove text-danger" aria-hidden="true"></span>
-                            </a>
-                            </span>
-                          </div>
-                          <div class="col-xs-11 col-xs-offset-1">
-                            <p>[##_guest_rep_desc_##]</p>
-                          </div>
-                        </div>
-                      </s_guest_reply_rep>
-                    </div>
-                  </s_guest_reply_container>
-                  <!-- /guestbook reply -->
-                </div>
-              </s_guest_rep>
-            </s_guest_container>
-            <!-- /guestbook contents -->
+ 
           </s_guest>
 
           <!-- article protected -->
@@ -276,10 +186,10 @@
           <s_article_rep>
             <div class="row article">
               <div class="col-xs-12">
-                <div class="article-haed page-header">
+                <div class="article-head page-header">
                   <h1><a href="[##_article_rep_link_##]">[##_article_rep_title_##]</a></h1>
                   <p>
-                    <a href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a> [##_article_rep_date_##] by [##_article_rep_author_##]
+                    <a href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a> [##_article_rep_date_##] <!--by [##_article_rep_author_##]-->
                     <s_ad_div>
                       <span class="article-admPanel">
                         <a href="[##_s_ad_m_link_##]" data-toggle="tooltip" data-placement="top" title="Edit">
@@ -429,15 +339,14 @@
                         </s_rp_guest>
                       </s_rp_member>
                       <div class="col-xs-4 col-md-2 rpForm-secret">
-                        <input type="checkbox" name="[##_rp_input_is_secret_##]">
-                        <button class="btn btn-default btn-block rpForm-secret" name="[##_rp_input_is_secret_##]">Secret?</button>
+                        <input type="checkbox" name="secret">비밀글
                       </div>
                       <div class="clearfix"></div>
                       <div class="col-xs-12 col-sm-10 rpForm-body">
                         <textarea class="form-control" rows="3" name="[##_rp_input_comment_##]"></textarea>
                       </div>
                       <div class="col-xs-12 col-sm-2 rpForm-submit">
-                        <button class="btn btn-default btn-block" onclick="[##_rp_onclick_submit_##]">Submit</button>
+                        <button class="btn btn-default btn-block" onclick="[##_rp_onclick_submit_##]">댓글달기</button>
                       </div>
                     </s_rp_input_form>
                   </div>
@@ -640,7 +549,6 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/superfish/1.7.9/js/superfish.min.js"></script>
     <script src="./images/script.js"></script>
 
     <script>

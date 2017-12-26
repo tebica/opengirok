@@ -13,10 +13,8 @@ body {
 #tistorytoolbarid {display: none;}
 /*
  *  Blog form
- *  --------------------------
  */
-/*  Reply list
-   */
+/*  Reply list */
 
 .rpList-info {
   padding-top: 10px;
@@ -27,8 +25,7 @@ body {
 .rpList-desc:last-child {
   margin-bottom: 10px
 }
-/*  Reply form
-   */
+/*  Reply form  */
 
 .rpForm-loggedIn {
   display: none;
@@ -50,9 +47,7 @@ body {
 .rpForm-password, .rpForm-secret {
   padding-left: 2.5px;
 }
-.rpForm-secret input {
-  display: none;
-}
+
 .rpForm-body {
   padding-top: 5px;
 }
@@ -62,8 +57,8 @@ body {
 .rpForm-submit {
   padding-top: 5px;
 }
-/*  over md  */
 
+/*  over md  */
 @media screen and ( min-width: 992px) {
   .rpForm-password {
     padding-right: 2.5px;
@@ -72,15 +67,16 @@ body {
     padding-left: 2.5px;
   }
 }
-/*  under md  */
 
+/*  under md  */
 @media screen and ( max-width: 991px) {
   .rpForm-link, .rpForm-secret {
     padding-top: 5px;
   }
+	
 }
-/*  over sm  */
 
+/*  over sm  */
 @media screen and ( min-width: 768px) {
   .rpForm-body {
     padding-right: 2.5px;
@@ -91,15 +87,34 @@ body {
   .rpForm-submit button {
     height: 74px;
   }
-}
-/*  Article
-   */
 
+}
+
+/*  Article  */
+
+.article-head h1 a{
+	color:#F15A22;
+  font-weight: 400;
+	font-size: 30px;
+}
+.article-head p a{
+	color:#333;
+}
 .article-comment .rpForm-name, .article-comment .rpForm-body {
   padding-left: 0px;
 }
 .article-comment .rpForm-secret, .article-comment .rpForm-submit {
   padding-right: 0px;
+}
+.article-comment .rpForm-secret{
+	font-size:18px;
+	color:#555;
+}
+.article-comment .rpForm-secret input[type=checkbox]{
+	width:20px;
+	height:20px;
+  vertical-align: text-bottom;
+
 }
 .article-tag {
   padding: 20px 0;
@@ -136,7 +151,6 @@ body {
 }
 /*
  *  Global
- *  --------------------------
  */
 .margin-top {
   margin-top: 40px;
@@ -148,7 +162,6 @@ body {
 }
 /*
  *  Specials
- *  --------------------------
  */
 
 #topbar{
@@ -555,6 +568,7 @@ footer#footer {
 #center-nav-container .flipped-nav {
 	display: block;
 	background: #594B43;
+	opacity: 0.9;
 	position: absolute;
 	width: 100%;
 	left: 0px;
@@ -633,7 +647,6 @@ footer#footer {
     border-color: transparent;
 	}
 	.navbar-dg .navbar-collapse {
-		display: block;
 		width: 100%;
 		margin-top: 50px;
 	}
@@ -651,5 +664,22 @@ footer#footer {
     margin: 0 auto;
 	}
 	
+	.row.ft-top .ft-top-lt a img {
+		display: none;
+	}
+	
+	.row.ft-top .ft-top-bt {
+		display: none;
+	}
+	
+	#inf-img-conainer .img-container .img-wrap {
+		width: 32.5%;
+	}
+	#inf-img-conainer .img-container .img-wrap:nth-child(1) {
+		margin-left: 0.4%;
+	}
+	#inf-img-conainer .img-container .img-wrap img {
+    width: 100%;
+	}
 	
 }
