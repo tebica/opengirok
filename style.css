@@ -1,4 +1,6 @@
 @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+
 html, body {
   height: 100%;
   background-color: #FFFFFF;
@@ -7,10 +9,24 @@ body {
   font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", Dotum, Helvetica, Arial, sans-serif;
   overflow-x: hidden;
 }
+.TD_more_btn{
+  font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", Dotum, Helvetica, Arial, sans-serif !important;
+}
 .container{
   background-color: #ffffff;
 }
 #tistorytoolbarid {display: none;}
+
+/*.td_selectedpost_2 .TD_thumbimg{
+        float:left;
+}
+.td_selectedpost_2 .TD_headline{
+        margin-bottom: 20px;
+}
+.td_selectedpost_2 .TD_thumblist div{
+        margin-right: 15px;
+}
+*/
 /*
  *  Blog form
  */
@@ -63,12 +79,19 @@ body {
 /*  Article  */
 
 .article-head h1 a{
-  color:#F15A22;
-  font-weight: 400;
+  color:#111111;
+  font-weight: 600;
   font-size: 30px;
 }
+.page-header, .article-head p{
+  margin:0;
+}
 .article-head p a{
-  color:#333;
+  color:#000;
+}
+.article-head .article-date{
+	margin-left:8px;
+	color:#bbb;
 }
 .article-comment .rpForm-name, .article-comment .rpForm-body {
   padding-left: 0px;
@@ -100,9 +123,7 @@ body {
 /*
  *  Global
  */
-.margin-top {
-  margin-top: 40px;
-}
+
 .box {
   padding: 6px 12px;
   border: 1px solid #ccc;
@@ -118,6 +139,13 @@ body {
 #menubar {
   width: 100%;
 }
+#menubar:after {
+   content: ''; 
+   width: 100%; 
+  background-color: #E6E7E9; 
+}
+
+
 #menubar, #menubar .container{
   background-color: #E6E7E9;
 }
@@ -198,43 +226,6 @@ body {
 .list-group-item {
   border:none;
 }
-/*   Carousel  */
-.carousel-indicators{
-  left:610px;
-  bottom:10px;
-}
-.carousel-indicators li{
-  background-color:#898A8F;
-}
-.carousel-indicators .active{
-    background-color:#F48900;
-}
-
-#carousel-btn{
-  left:720px;
-  bottom:10px;
-  position: absolute;
-  z-index: 15;
-}
-.img-icon{
-  background-image: url(./images/icon_group.
-  );
-  width: 26px;
-  height: 26px;
-}
-.img-icon.icon-left{
-  background-position: 0px -400px;
-}
-.img-icon.icon-pause{
-  background-position: 0px -450px;
-}
-.img-icon.icon-right{
-  background-position: 0px -500px;
-}
-
-.carousel .col-md-4 {
-  margin-left:0;
-}
 
 /*****************/
 /* 드랍다운 메뉴 */
@@ -245,27 +236,20 @@ body {
 .navbar .category_list .c_cnt {
   display: none;
 }
-/*.navbar .category_list > li {
-  float: left;
-}*/
 
 /*****************/
 /* 동동 수정 */
 /******************/
 
-.carousel-indicators .active {
-  background-color: #eb008b;
+.td_selectedpost_2 div{
+	text-align:left;
 }
-.carousel-indicators li, .carousel-indicators li.active{
-  width:15px;
-  height:15px;
-  margin:0;
+.td_selectedpost_2 .TD_headline a{
+    font-size:24px;
 }
-.carousel-indicators li:not(:nth-child(1)) {
-  margin-left: 10px;
-}
-.carousel .TD_headline a{
-    font-size:28px;
+
+.td_selectedpost_2 .TD_summary{
+    font-size:16px;
 }
 
 /*** 첫페이지 아이템 ****/
@@ -311,8 +295,13 @@ body {
 
 .TD_thumbnail{
   border : 1px solid #fff;
+	width:100% !important;;
 }
-
+.TD_recent .TD_thumbnail td a img{
+        max-height:180px;
+        min-height:150px;
+}
+~   
 /* 헤드라인형 모듈 */
 .TD_toparticle {
     margin: 5px;
@@ -497,40 +486,6 @@ body {
   height: auto;
 }
 
-
-
-
-
-/*  over md  */
-@media screen and ( min-width: 768px) {
-  .rpForm-password {
-    padding-right: 2.5px;
-  }
-  .rpForm-link {
-    padding-left: 2.5px;
-  }
-  .rpForm-body {
-    padding-right: 2.5px;
-  }
-  .rpForm-submit {
-    padding-left: 2.5px;
-  }
-  .rpForm-submit button {
-    height: 74px;
-  }
-}
-
-
-@media screen and ( max-width: 767px) { 
-
-  #inf-img-conainer .img-container .img-wrap { 
-    width: 100%;
-  }
-  #inf-img-conainer .img-container .img-wrap:not(:nth-child(1)) {  
-    margin-top: 30px;
-  }
-}
-
 /* 푸터 */
 footer#footer {
   background-color: #f5f5f5;
@@ -548,7 +503,10 @@ footer#footer {
   border-bottom: 2px solid #f56a2c;
   border-top: 2px solid #e9e9e9;
 }
-
+#menubar ul, #menubar li{
+        padding:0;
+        margin:0;
+}
 .navbar-right.navbar-collapse.collapse {
   position: absolute;
   top: 10px;
@@ -560,7 +518,6 @@ footer#footer {
  padding-top: 10px;
 }
 #center-nav-container .nav-title{
-  margin-left: -40px;
   min-width: 920px;
   margin-bottom: 0px;
   padding-bottom: 10px;
@@ -597,34 +554,14 @@ footer#footer {
   position: absolute;
   width: 100%;
   left: 0px;
-  padding: 20px 8%;
+  padding: 20px 0;
   border-top: 2px solid #f56a2c;
   display: none;
 }
-#center-nav-container .nav-title li.link_item_li:nth-child(2) {
-  width: 20%;
-}
-#center-nav-container .nav-title li.link_item_li:not(nth-child(1)) {
-  margin-right: 2%;
-}
-
-#center-nav-container .flipped-nav .sub_category_list:nth-child(1) { 
-    width: 17.7%;
-}
-#center-nav-container .flipped-nav .sub_category_list:nth-child(2) {
-    width: 21.7%;
-}
-
-#center-nav-container .flipped-nav .sub_category_list:nth-child(3) {
-    width: 17.7%;
-}
-
-
 
 #center-nav-container .flipped-nav .sub_category_list {
-  margin-left: -25px;
   display: inline-block;
-  width: 17.7%;
+  width: 16.4%;
   vertical-align: top;
 }
 
@@ -650,10 +587,43 @@ footer#footer {
   display: block; 
 }
 #center-nav-container .flipped-nav .container {
+/*  min-width: 920px; */
   background: #f5f5f5;
+	padding:0 30px;;
+}
+/********* Media Query *********/
+
+@media screen and ( min-width: 768px) {
+  .rpForm-password {
+    padding-right: 2.5px;
+  }
+  .rpForm-link {
+    padding-left: 2.5px;
+  }
+  .rpForm-body {
+    padding-right: 2.5px;
+  }
+  .rpForm-submit {
+    padding-left: 2.5px;
+  }
+  .rpForm-submit button {
+    height: 74px;
+  }
+
+	#menubar .container {
+    min-width: 970px;
+    max-width: 1170px;
+	} 	
+
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
+  #inf-img-conainer .img-container .img-wrap { 
+    width: 100%;
+  }
+  #inf-img-conainer .img-container .img-wrap:not(:nth-child(1)) {  
+    margin-top: 30px;
+  }
   #center-nav-container { 
     display: none;  
   }
@@ -745,13 +715,9 @@ footer#footer {
     display: inline-block;
     float: left;
   }
-  .TD_headline {
-    position: absolute;
-    left: 100px;
-    width: 80%;
-  }
+
   .TD_headline a {
-     font-weight: normal;
+    font-weight: normal;
     font-size: 16px;
     line-height: 21px;
     word-break: break-word;

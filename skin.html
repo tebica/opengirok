@@ -12,6 +12,7 @@
 
   <link href="./images/superfish-custom.css" rel="stylesheet" />
   <link href="./style.css" rel="stylesheet" />
+  <link href="http://earlybird.kr/temp/s.css" rel="stylesheet">
   <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -187,9 +188,8 @@
             <div class="row article">
               <div class="col-xs-12">
                 <div class="article-head page-header">
-                  <h1><a href="[##_article_rep_link_##]">[##_article_rep_title_##]</a></h1>
                   <p>
-                    <a href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a> [##_article_rep_date_##] <!--by [##_article_rep_author_##]-->
+                    <a href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a> <span class="article-date">[##_article_rep_date_##]</span>
                     <s_ad_div>
                       <span class="article-admPanel">
                         <a href="[##_s_ad_m_link_##]" data-toggle="tooltip" data-placement="top" title="Edit">
@@ -210,6 +210,7 @@
                       </span>
                     </s_ad_div>
                   </p>
+                  <h1><a href="[##_article_rep_link_##]">[##_article_rep_title_##]</a></h1>
                 </div>
                 <div class="article-content"> [##_article_rep_desc_##] </div>
                 <s_tag_label>
@@ -402,7 +403,7 @@
             
         </div>
         <!-- #sidebar -->
-        <div class="col-xs-12   col-sm-3 margin-top" id="sidebar">
+        <div class="col-xs-12 col-sm-3" id="sidebar">
           <s_sidebar>
             <!-- Right Side Offset -->
             <s_sidebar_element>
@@ -568,13 +569,13 @@
 				var mobile_list = $( this ).find('.sub_category_list').clone()
 				
 				new_nav_container.find('.nav-title').append(items.wrap( "<li class='link_item_li'></li>" ));
-      			
+				
 				if ( mobile_list.length > 0 ) {
-					  m_navbar.find('ul.nav.navbar-nav').append(m_items.wrap( "<li class='nav-item dropdown'></li>" ).append(mobile_list)).promise().done(function() {
+					m_navbar.find('ul.nav.navbar-nav').append(m_items.wrap( "<li class='nav-item dropdown'></li>" ).append(mobile_list)).promise().done(function() {
 				});
 					
 				} else {
-  				m_navbar.find('ul.nav.navbar-nav').append(m_items.wrap( "<li class='nav-item dropdown'></li>" ));
+					m_navbar.find('ul.nav.navbar-nav').append(m_items.wrap( "<li class='nav-item dropdown'></li>" ));
 				}
 
 			$( this ).find('.sub_category_list').length > 0 ? new_nav_container.find('.flipped-nav .container').append(pc_list) : new_nav_container.find('.flipped-nav .container').append('<ul class="sub_category_list"></ul>');
@@ -583,58 +584,33 @@
 
 			}).promise().done(function () { 
 				console.log($('.navbar-dg .nav.navbar-nav').find('.link_item_li'))
-        $('.link_item').wrap( "<li class='link_item_li'></li>" )
-
+				$('.link_item').wrap( "<li class='link_item_li'></li>" )
 			});
 			
 			
-		   $('.nav-title')
-          .mouseover(function() {
-            new_nav_container.find('.flipped-nav').addClass('active');
-          })
-          .mouseout(function() {
-            if ( $(this).attr('class') !== 'nav-title') {
-              new_nav_container.find('.flipped-nav').removeClass('active');
-            }
-          });
-			$('.flipped-nav')
-          .mouseover(function() {
-            new_nav_container.find('.flipped-nav').addClass('active');
-          })
-          .mouseout(function() {
-            if ($(this).attr('class') !== 'link_item') {
-              new_nav_container.find('.flipped-nav').removeClass('active');
-            }
-          });
-			$('#topbar').mouseover(function() {
-					              new_nav_container.find('.flipped-nav').removeClass('active');
+		$('.nav-title')
+			.mouseover(function() {
+				new_nav_container.find('.flipped-nav').addClass('active');
 			})
+			.mouseout(function() {
+				if ( $(this).attr('class') !== 'nav-title') {
+				new_nav_container.find('.flipped-nav').removeClass('active');
+				}
+			});
+		$('.flipped-nav')
+			.mouseover(function() {
+			new_nav_container.find('.flipped-nav').addClass('active');
+			})
+			.mouseout(function() {
+				if ($(this).attr('class') !== 'link_item') {
+				new_nav_container.find('.flipped-nav').removeClass('active');
+			}
+			});
+		$('#topbar').mouseover(function() {
+			new_nav_container.find('.flipped-nav').removeClass('active');
+		})
 			
-			//setup carousel
-           $('.td_selectedpost_1').addClass('carousel slide').attr('id', 'carousel-id').attr('data-ride','carousel')
-           $('.slide .item').first().addClass('active')
-           $('.slide .item').wrapAll(' <div class="carousel-inner" role="listbox"\>');
-           $('.td_selectedpost_1 .td_clear').remove();
 
-           // create dots to control carousel
-           var cnt=0
-           $('#carousel-id').append('<ol class="carousel-indicators"></ol>')
-           $('.carousel-inner .item').each(function(){
-             $('#carousel-id ol').append('<li data-target="#carousel-id" data-slide-to="'+cnt+'"></li>');
-             if(cnt == 0){$('#carousel-id ol li').addClass('active')}
-             cnt ++;
-           });
-           $('#carousel-id').append('<div id="carousel-btn"><div>')
-           $('#carousel-btn').append('<a class="left" href="#carousel-id" role="button" data-slide="prev"></a>')
-           $('#carousel-btn .left').append('<img class="img-icon icon-left" />')
-           $('#carousel-btn').append('<a class="pause" role="button"></a>')
-           $('#carousel-btn .pause').append('<img class="img-icon icon-pause" />')
-           $('#carousel-btn').append('<a class="right" href="#carousel-id" role="button" data-slide="next"></a>')
-           $('#carousel-btn .right').append('<img class="img-icon icon-right" />')
-
-           $('#carousel-btn .pause').click(function () {
-               $('#carousel-id').carousel('pause');
-           });
 		});
 
     </script>
