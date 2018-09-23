@@ -1,4 +1,57 @@
 @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+.search-form .form-group {
+  float: right !important;
+  transition: all 0.35s, border-radius 0s;
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+}
+.search-form .form-group input.form-control {
+  padding-right: 20px;
+  border: 0 none;
+  background: transparent;
+  box-shadow: none;
+  display:block;
+}
+.search-form .form-group input.form-control::-webkit-input-placeholder {
+  display: none;
+}
+.search-form .form-group input.form-control:-moz-placeholder {
+  /* Firefox 18- */
+  display: none;
+}
+.search-form .form-group input.form-control::-moz-placeholder {
+  /* Firefox 19+ */
+  display: none;
+}
+.search-form .form-group input.form-control:-ms-input-placeholder {
+  display: none;
+}
+.search-form .form-group:hover,
+.search-form .form-group.hover {
+  width: 70%;
+  border-radius: 4px 25px 25px 4px;
+}
+.search-form .form-group span.form-control-feedback {
+  position: absolute;
+  top: -1px;
+  right: -2px;
+  z-index: 2;
+  display: block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  color: #3596e0;
+  left: initial;
+  font-size: 14px;
+}
+
+
+
 
 
 html, body {
@@ -90,8 +143,8 @@ body {
   color:#000;
 }
 .article-head .article-date{
-	margin-left:8px;
-	color:#bbb;
+  margin-left:8px;
+  color:#bbb;
 }
 .article-comment .rpForm-name, .article-comment .rpForm-body {
   padding-left: 0px;
@@ -160,7 +213,7 @@ body {
   width: 165px; 
   height:47px;
   margin-top:28px;
-  }
+}
 #main {
   display: flex;
   flex-direction: column;
@@ -242,7 +295,7 @@ body {
 /******************/
 
 .td_selectedpost_2 div{
-	text-align:left;
+  text-align:left;
 }
 .td_selectedpost_2 .TD_headline a{
     font-size:24px;
@@ -295,7 +348,7 @@ body {
 
 .TD_thumbnail{
   border : 1px solid #fff;
-	width:100% !important;;
+  width:100% !important;;
 }
 .TD_recent .TD_thumbnail td a img{
         max-height:180px;
@@ -452,7 +505,6 @@ body {
   margin-left: 0px;
 }
 
-
 .td_slidemargin .TD_date {
   text-align: left;
   position: absolute;
@@ -495,7 +547,6 @@ footer#footer {
 }
 
 /* 헤더 */
-
 #menubar, #menubar .container {
   background-color: #FFF;
 }
@@ -565,7 +616,6 @@ footer#footer {
   vertical-align: top;
 }
 
-
 #center-nav-container .flipped-nav.active {
   display: block;
 }
@@ -580,19 +630,18 @@ footer#footer {
   display: none !important;
 }
 
-.navbar.navbar-dg {
-  display: none;
-}
 #center-nav-container { 
   display: block; 
 }
 #center-nav-container .flipped-nav .container {
 /*  min-width: 920px; */
   background: #f5f5f5;
-	padding:0 30px;;
+  padding:0 30px;;
 }
+
 /********* Media Query *********/
 
+/*********  Desktop  *********/
 @media screen and ( min-width: 768px) {
   .rpForm-password {
     padding-right: 2.5px;
@@ -609,14 +658,17 @@ footer#footer {
   .rpForm-submit button {
     height: 74px;
   }
-
-	#menubar .container {
+  #navbar-mobile {
+    display: none;
+  }
+  #menubar .container {
     min-width: 970px;
     max-width: 1170px;
-	} 	
+  }   
 
 }
 
+/*********  Mobile  *********/
 @media screen and (max-width: 768px) {
   #inf-img-conainer .img-container .img-wrap { 
     width: 100%;
@@ -625,15 +677,20 @@ footer#footer {
     margin-top: 30px;
   }
   #center-nav-container { 
-    display: none;  
+    display: none;
   }
-  .navbar.navbar-dg {
+  #navigation{
+    display: none;
+  }
+  #navbar-mobile {
     display: block;
+    border-bottom: 2px solid #CCC;
+    background-color:#FFF;
   }
-  .navbar-dg .opengirok-nav {
+  #navbar-mobile{
     margin-bottom: 0px;
   }
-  .navbar-dg .opengirok-navbar .btn-default {
+  #navbar-mobile .btn-default {
     margin-left: 10px;
     margin-top: 12px; 
   }
@@ -641,17 +698,17 @@ footer#footer {
     background-color: transparent;
     border-color: transparent;
   }
-  .navbar-dg .navbar-collapse {
+  #navbar-mobile .navbar-collapse {
     width: 100%;
     margin-top: 50px;
   }
-  .navbar-dg .navbar-collapse li > a {
-    color: #FFF;
+  #navbar-mobile .navbar-collapse li > a {
+    color: #777;
   }
-  .navbar.navbar-dg .dropdown-item {
-    color: #FFF;
+  #navbar-mobile .dropdown-item {
+    color: #555;
     padding-left: 5%;
-    border-bottom: 1px solid #FFF;
+    border-bottom: 1px solid #888;
     padding-top: 5px;
     padding-bottom: 5px;
     width: 90%;

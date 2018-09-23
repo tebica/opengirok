@@ -22,15 +22,22 @@
 
 <body>
   <s_t3>
-	<div class="navbar navbar-dg" style="background-color: #C81126">
-    <div class="navbar primary navbar-static-top opengirok-nav">
+
+    <div id="navbar-mobile" class="navbar primary navbar-static-top">
         <div style="line-height:60px" class="navbar-header pull-left">
-            <a class="btn btn-default navbar-toggle collapsed navbar-toggle-custom" style="color:#FFFFFF"
+            <a class="btn btn-default navbar-toggle collapsed navbar-toggle-custom" style="color:#333"
                data-toggle="collapse"
                data-target=".primary-collapse">
                 <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
             </a>
         </div>
+			  <form action="/search/" class="search-form">
+                <div class="form-group has-feedback">
+            		<label for="search" class="sr-only">Search</label>
+            		<input type="text" class="form-control" name="search" id="search" placeholder="search">
+              		<span class="glyphicon glyphicon-search form-control-feedback"></span>
+            	</div>
+        </form>
         <a class="logo-title" style="line-height:60px;" class="hidden-sm hidden-md hidden-lg" tabindex="-1" href="/">
 
         </a>
@@ -40,7 +47,7 @@
             </ul>
         </div>
     </div>
-	</div>
+
 		
     <!-- nav -->
     <nav class="navbar navbar-static-top" id="navigation">
@@ -558,7 +565,7 @@
 			var category_lists = $('.category_list > li');
 			var sub_category_lists = $('.category_list .sub_category_list');
 			var new_nav_container = $('#center-nav-container');			
-			var m_navbar = $('.navbar-dg')
+			var m_navbar = $('#navbar-mobile')
 			
 			category_lists.each(function(i) {
 				
@@ -583,7 +590,7 @@
 		
 
 			}).promise().done(function () { 
-				console.log($('.navbar-dg .nav.navbar-nav').find('.link_item_li'))
+				console.log($('#navbar-mobile .nav.navbar-nav').find('.link_item_li'))
 				$('.link_item').wrap( "<li class='link_item_li'></li>" )
 			});
 			
