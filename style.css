@@ -1,58 +1,19 @@
 @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
-.search-form .form-group {
-  float: right !important;
-  transition: all 0.35s, border-radius 0s;
-  width: 32px;
-  height: 32px;
-  background-color: #fff;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
-  border-radius: 25px;
-  border: 1px solid #ccc;
-}
-.search-form .form-group input.form-control {
-  padding-right: 20px;
-  border: 0 none;
-  background: transparent;
-  box-shadow: none;
-  display:block;
-}
-.search-form .form-group input.form-control::-webkit-input-placeholder {
-  display: none;
-}
-.search-form .form-group input.form-control:-moz-placeholder {
-  /* Firefox 18- */
-  display: none;
-}
-.search-form .form-group input.form-control::-moz-placeholder {
-  /* Firefox 19+ */
-  display: none;
-}
-.search-form .form-group input.form-control:-ms-input-placeholder {
-  display: none;
-}
-.search-form .form-group:hover,
-.search-form .form-group.hover {
-  width: 70%;
-  border-radius: 4px 25px 25px 4px;
-}
-.search-form .form-group span.form-control-feedback {
-  position: absolute;
-  top: -1px;
-  right: -2px;
-  z-index: 2;
-  display: block;
+
+span.form-control-search {
   width: 34px;
   height: 34px;
   line-height: 34px;
   text-align: center;
-  color: #3596e0;
-  left: initial;
-  font-size: 14px;
+  font-size: 18px;
+	padding:0px;
+	margin-right:10px;
 }
 
-
-
-
+a.search-btn{
+	padding:0;
+	margin-top: 6px;
+}
 
 html, body {
   height: 100%;
@@ -67,6 +28,9 @@ body {
 }
 .container{
   background-color: #ffffff;
+}
+.panel{
+	border:none;
 }
 #tistorytoolbarid {display: none;}
 
@@ -442,7 +406,7 @@ body {
     border-left: 15px solid #C81126;
     background: none !important;
     padding-left: 9px !important;
-    padding-top: 5px !important;
+    margin-top: 5px !important;
 }
 .TD_more_btn {
     padding: 2px 0 0 0;
@@ -451,14 +415,10 @@ body {
 .TD_more_btn a{
     font-size: 0.9em;
     color: #333;
-    border: 1px solid;
-    padding: 6px 13px 5px 13px;
-    border-radius: 5px;
+    border: 1px solid #bbb;
+    padding: 5px 12px 4px 12px;
 }
 
-.TD_list .TD_headline a{
-    color:#999999;
-}
 /* 최신글 텍스트 목록형 */
 .TD_recent .TD_list{
     margin:5px;
@@ -664,7 +624,10 @@ footer#footer {
   #menubar .container {
     min-width: 970px;
     max-width: 1170px;
-  }   
+  }
+	#sidebar .module_plugin{
+		padding-bottom:4px;
+	}
 
 }
 
@@ -673,9 +636,17 @@ footer#footer {
   #inf-img-conainer .img-container .img-wrap { 
     width: 100%;
   }
-  #inf-img-conainer .img-container .img-wrap:not(:nth-child(1)) {  
-    margin-top: 30px;
+  #main.container{
+    margin-top: 10px;
   }
+  /* 이미지 컨테이너 */
+  #inf-img-conainer {
+    padding: 20px 0px;
+		margin-top:15px;
+  }
+/*  #inf-img-conainer .img-container .img-wrap:not(:nth-child(1)) {  
+    margin-top: 30px;
+  }*/
   #center-nav-container { 
     display: none;
   }
@@ -686,13 +657,12 @@ footer#footer {
     display: block;
     border-bottom: 2px solid #CCC;
     background-color:#FFF;
-  }
-  #navbar-mobile{
-    margin-bottom: 0px;
+		margin-bottom:0;
   }
   #navbar-mobile .btn-default {
-    margin-left: 10px;
-    margin-top: 12px; 
+    /*margin-left: 10px;
+    margin-top: 12px; */
+		margin:4px;
   }
   .btn-default:hover {
     background-color: transparent;
@@ -703,7 +673,7 @@ footer#footer {
     margin-top: 50px;
   }
   #navbar-mobile .navbar-collapse li > a {
-    color: #777;
+    color: #414149;
   }
   #navbar-mobile .dropdown-item {
     color: #555;
@@ -715,6 +685,16 @@ footer#footer {
     display: block;
     margin: 0 auto;
   }
+  #navbar-mobile .logo-title img{
+	  margin-top:8px;
+		width:120px;
+  }
+	#navbar-mobile .navbar-collapse{
+		position: absolute;
+		background-color: #EEE;
+		width:240px;
+		margin-top:7px;
+	}
   
   .row.ft-top .ft-top-lt a img {
     display: none;
@@ -751,7 +731,10 @@ footer#footer {
   .rpForm-loggedIn {
     margin-top: 4px;
   }
-
+  .container {
+    padding-right: 5px;
+    padding-left: 5px;
+	}
   .container>.navbar-header {
     display: none;
   }
@@ -807,5 +790,24 @@ footer#footer {
   .TD_recent .td_slidemargin {
     width: 100% !important;
   }
-   
+  .article-head h1 a{
+    font-size: 24px;
+  }
+  #footer	.ft-bottom-rt{
+		display:none;
+	}
+  #footer .ft-top {
+    padding: 20px 0;
+  }
+	#sidebar{
+		background-color: #eee;
+    padding: 8px 0;
+	}
+	#sidebar .module_plugin{
+		padding:2px;
+	}
+	#sidebar img{
+		width:100%;
+	}
+	
 }

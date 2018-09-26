@@ -23,7 +23,7 @@
 <body>
   <s_t3>
 
-    <div id="navbar-mobile" class="navbar primary navbar-static-top">
+    <div id="navbar-mobile" class="navbar navbar-static-top">
         <div style="line-height:60px" class="navbar-header pull-left">
             <a class="btn btn-default navbar-toggle collapsed navbar-toggle-custom" style="color:#333"
                data-toggle="collapse"
@@ -31,45 +31,52 @@
                 <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
             </a>
         </div>
-			  <form action="/search/" class="search-form">
-                <div class="form-group has-feedback">
-            		<label for="search" class="sr-only">Search</label>
-            		<input type="text" class="form-control" name="search" id="search" placeholder="search">
-              		<span class="glyphicon glyphicon-search form-control-feedback"></span>
-            	</div>
-        </form>
-        <a class="logo-title" style="line-height:60px;" class="hidden-sm hidden-md hidden-lg" tabindex="-1" href="/">
-
-        </a>
+        <a class="btn btn-default navbar-toggle collapsed search-btn" data-toggle="collapse" data-target=".search-form"><span class="glyphicon glyphicon-search form-control-search"></span>
+			</a>
+        <div align="center">
+					<a class="logo-title" href="/">
+          <img src="./images/logo-main.png">
+          </a>
+			  </div>
         <div class="navbar-collapse primary-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
               
             </ul>
         </div>
     </div>
-
 		
+    <div class="collapse navbar-collapse hidden-lg search-form">
+      <form class="mobile_search hidden-sm hidden-md hidden-lg" role="search" action="/" method="GET">
+      <div class="input-group">
+      <input type="text" class="form-control" name="mobile-search" placeholder="검색하기..."/>
+      <span class="input-group-btn">
+        <button class="btn" type="button" onclick="try{window.location.href='/search/'+looseURIEncode(document.getElementsByName('mobile-search')[0].value);document.getElementsByName('mobile-search')[0].value='';return false;}catch(e){}">검색</button>
+      </span>
+    </div>
+				</form>
+    </div>
+    
     <!-- nav -->
-    <nav class="navbar navbar-static-top" id="navigation">
-			<div class="container">
-					<div class="row" id="topbar">
-							<div class="col-sm-9 text-center">
-								<a href="[##_blog_link_##]"><img src="./images/logozzz.png"></a>
-							</div>
-							<div class="col-sm-3 text-center">
-								<s_search>
-											<div class="input-group" id="searchbar">
-												<input type="text" class="form-control" placeholder="검색" name="[##_search_name_##]" value="[##_search_text_##]" onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }" />
-												<span class="input-group-btn">
-													<button class="btn btn-default" type="button" onclick="[##_search_onclick_submit_##]">
-														<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-													</button>
-												</span>
-											</div>
-										</s_search>
-						</div>
-					</div>
-			</div>
+    <nav id="navigation" class="navbar navbar-static-top">
+      <div class="container">
+          <div class="row" id="topbar">
+              <div class="col-sm-9 text-center">
+                <a href="[##_blog_link_##]"><img src="./images/logo-main.png"></a>
+              </div>
+              <div class="col-sm-3 text-center">
+                <s_search>
+                      <div class="input-group" id="searchbar">
+                        <input type="text" class="form-control" placeholder="검색" name="[##_search_name_##]" value="[##_search_text_##]" onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }" />
+                        <span class="input-group-btn">
+                          <button class="btn btn-default" type="button" onclick="[##_search_onclick_submit_##]">
+                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                          </button>
+                        </span>
+                      </div>
+                    </s_search>
+            </div>
+          </div>
+      </div>
       <div id="menubar">
       <div class="container">
         <div class="navbar-header">
@@ -79,15 +86,15 @@
          <!-- category_list -->
         [##_category_list_##]
         <!-- / category_list -->
-				<div id="center-nav-container" class="nav-container container">
-					<ul class="nav-title">
-							
-					</ul>
-					<div class="flipped-nav">
-						<div class="container"></div>
-					</div>
-				</div>
-						
+        <div id="center-nav-container" class="nav-container container">
+          <ul class="nav-title">
+              
+          </ul>
+          <div class="flipped-nav">
+            <div class="container"></div>
+          </div>
+        </div>
+            
         <ul class="nav navbar-nav navbar-right navbar-collapse collapse">
             <li data-toggle="tooltip" data-placement="bottom" title="Login" class="navigation-guest"> <a href="https://www.tistory.com/login"><span class="glyphicon glyphicon glyphicon-off" aria-hidden="true"></span></a> </li>
             <li data-toggle="tooltip" data-placement="bottom" title="Write" class="navigation-admin"> <a href="[##_owner_url_##]/entry/post"><span class="glyphicon glyphicon glyphicon-pencil" aria-hidden="true"></span></a> </li>
@@ -98,7 +105,7 @@
       </div> <!-- /container -->
       </div>
     </nav>
-		
+    
     <div class="container" id="main">
       <div class="row">
         <div class="col-xs-12 col-sm-9">
@@ -411,22 +418,9 @@
         </div>
         <!-- #sidebar -->
         <div class="col-xs-12 col-sm-3" id="sidebar">
+					<div class="row">
           <s_sidebar>
             <!-- Right Side Offset -->
-            <s_sidebar_element>
-              <!-- Profile -->
-              <div class="row">
-                <div class="col-xs-12">
-                  <div class="thumbnail">
-                    <img class="img-responsive" src="[##_image_##]" alt="" />
-                    <div class="caption text-center">
-                      <h3>[##_blogger_##]</h3>
-                      <p>[##_desc_##]</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </s_sidebar_element>
 
             <s_sidebar_element>
               <!-- Visitor Counter -->
@@ -469,14 +463,6 @@
             </s_sidebar_element>
 
             <s_sidebar_element>
-              <!-- Calender -->
-              <div class="panel panel-default">
-                <div class="list-group">
-                  <div class="list-group-item"> [##_calendar_##] </div>
-                </div>
-              </div>
-            </s_sidebar_element>
-            <s_sidebar_element>
               <!-- Link -->
               <div class="panel panel-default">
                 <div class="panel-heading">관련링크</div>
@@ -486,36 +472,37 @@
               </div>
             </s_sidebar_element>
           </s_sidebar>
+					</div>
         </div>
         <!-- /#sidebar -->
       </div>
     </div>
-		<div id="inf-img-conainer">
-			<div class="container">
-				<div class="row">
-					<div class="img-container">
-						<div class="img-wrap">
-							<img class="project-img" src="https://tistory3.daumcdn.net/tistory/2490786/skin/images/bottom1.png" />
-						</div>
-						<div class="img-wrap">
-							<img class="project-img" src="https://tistory3.daumcdn.net/tistory/2490786/skin/images/bottom2.png" />
-						</div>
-						<div class="img-wrap">
-							<img class="project-img" src="https://tistory3.daumcdn.net/tistory/2490786/skin/images/bottom3.png" />
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		
+    <div id="inf-img-conainer">
+      <div class="container">
+        <div class="row">
+          <div class="img-container">
+            <div class="img-wrap">
+              <img class="project-img" src="https://tistory3.daumcdn.net/tistory/2490786/skin/images/bottom1.png" />
+            </div>
+            <div class="img-wrap">
+              <img class="project-img" src="https://tistory3.daumcdn.net/tistory/2490786/skin/images/bottom2.png" />
+            </div>
+            <div class="img-wrap">
+              <img class="project-img" src="https://tistory3.daumcdn.net/tistory/2490786/skin/images/bottom3.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <footer id="footer">
       <div class="container">
         <div class="row ft-top">
         <div class="col-md-3 ft-top-lt">
-            <a href="[##_blog_link_##]"><img src="./images/footer-logo.png"></a>
+            <a href="[##_blog_link_##]"><img src="./images/logo-footer.png"></a>
         </div>
         <div class="col-md-6 ft-top-md">
-					<span class="title">투명사회를 위한 정보공개센터</span> <br/>
+          <span class="title">투명사회를 위한 정보공개센터</span> <br/>
             <i class="fa fa-map-marker" aria-hidden="true"></i> (우)03100 서울시 종로구 이화동 135번지(새주소 : 이화장길 20) 삼영빌딩 2층 <br/>
             <i class="fa fa-mobile" aria-hidden="true"></i> 전화 02-2039-8361<br/>
             <i class="fa fa-fax" aria-hidden="true"></i> 팩스 : 02-6919-2039<br/>
@@ -527,18 +514,18 @@
         </div>
         </div>
       </div>
-			<div class="footer-info-container">
-  			<div class="container">
-					<div class="row ft-bottom">
-							<div class="col-sm-6 ft-bottom-lt">
-								정보공개가 세상을 바꿉니다.
-							</div>
-							<div class="col-sm-6 ft-bottom-rt">
-								The Center for Freedom of Information and Transparent Society
-							</div>
-					</div>
-				</div>
-			</div>
+      <div class="footer-info-container">
+        <div class="container">
+          <div class="row ft-bottom">
+              <div class="col-sm-6 ft-bottom-lt">
+                정보공개가 세상을 바꿉니다.
+              </div>
+              <div class="col-sm-6 ft-bottom-rt">
+                The Center for Freedom of Information and Transparent Society
+              </div>
+          </div>
+        </div>
+      </div>
     </footer>
     
     <div class="row visible-xs">
@@ -560,65 +547,65 @@
     <script src="./images/script.js"></script>
 
     <script>
-	
-		jQuery(document).ready(function(){ 
-			var category_lists = $('.category_list > li');
-			var sub_category_lists = $('.category_list .sub_category_list');
-			var new_nav_container = $('#center-nav-container');			
-			var m_navbar = $('#navbar-mobile')
-			
-			category_lists.each(function(i) {
-				
-				var items = $(this).find('.link_item')
-				var m_items = items.clone();
-				var pc_list = $( this ).find('.sub_category_list');
-				
-				var mobile_list = $( this ).find('.sub_category_list').clone()
-				
-				new_nav_container.find('.nav-title').append(items.wrap( "<li class='link_item_li'></li>" ));
-				
-				if ( mobile_list.length > 0 ) {
-					m_navbar.find('ul.nav.navbar-nav').append(m_items.wrap( "<li class='nav-item dropdown'></li>" ).append(mobile_list)).promise().done(function() {
-				});
-					
-				} else {
-					m_navbar.find('ul.nav.navbar-nav').append(m_items.wrap( "<li class='nav-item dropdown'></li>" ));
-				}
+  
+    jQuery(document).ready(function(){ 
+      var category_lists = $('.category_list > li');
+      var sub_category_lists = $('.category_list .sub_category_list');
+      var new_nav_container = $('#center-nav-container');     
+      var m_navbar = $('#navbar-mobile')
+      
+      category_lists.each(function(i) {
+        
+        var items = $(this).find('.link_item')
+        var m_items = items.clone();
+        var pc_list = $( this ).find('.sub_category_list');
+        
+        var mobile_list = $( this ).find('.sub_category_list').clone()
+        
+        new_nav_container.find('.nav-title').append(items.wrap( "<li class='link_item_li'></li>" ));
+        
+        if ( mobile_list.length > 0 ) {
+          m_navbar.find('ul.nav.navbar-nav').append(m_items.wrap( "<li class='nav-item dropdown'></li>" ).append(mobile_list)).promise().done(function() {
+        });
+          
+        } else {
+          m_navbar.find('ul.nav.navbar-nav').append(m_items.wrap( "<li class='nav-item dropdown'></li>" ));
+        }
 
-			$( this ).find('.sub_category_list').length > 0 ? new_nav_container.find('.flipped-nav .container').append(pc_list) : new_nav_container.find('.flipped-nav .container').append('<ul class="sub_category_list"></ul>');
+      $( this ).find('.sub_category_list').length > 0 ? new_nav_container.find('.flipped-nav .container').append(pc_list) : new_nav_container.find('.flipped-nav .container').append('<ul class="sub_category_list"></ul>');
 
-		
+    
 
-			}).promise().done(function () { 
-				console.log($('#navbar-mobile .nav.navbar-nav').find('.link_item_li'))
-				$('.link_item').wrap( "<li class='link_item_li'></li>" )
-			});
-			
-			
-		$('.nav-title')
-			.mouseover(function() {
-				new_nav_container.find('.flipped-nav').addClass('active');
-			})
-			.mouseout(function() {
-				if ( $(this).attr('class') !== 'nav-title') {
-				new_nav_container.find('.flipped-nav').removeClass('active');
-				}
-			});
-		$('.flipped-nav')
-			.mouseover(function() {
-			new_nav_container.find('.flipped-nav').addClass('active');
-			})
-			.mouseout(function() {
-				if ($(this).attr('class') !== 'link_item') {
-				new_nav_container.find('.flipped-nav').removeClass('active');
-			}
-			});
-		$('#topbar').mouseover(function() {
-			new_nav_container.find('.flipped-nav').removeClass('active');
-		})
-			
+      }).promise().done(function () { 
+        console.log($('#navbar-mobile .nav.navbar-nav').find('.link_item_li'))
+        $('.link_item').wrap( "<li class='link_item_li'></li>" )
+      });
+      
+      
+    $('.nav-title')
+      .mouseover(function() {
+        new_nav_container.find('.flipped-nav').addClass('active');
+      })
+      .mouseout(function() {
+        if ( $(this).attr('class') !== 'nav-title') {
+        new_nav_container.find('.flipped-nav').removeClass('active');
+        }
+      });
+    $('.flipped-nav')
+      .mouseover(function() {
+      new_nav_container.find('.flipped-nav').addClass('active');
+      })
+      .mouseout(function() {
+        if ($(this).attr('class') !== 'link_item') {
+        new_nav_container.find('.flipped-nav').removeClass('active');
+      }
+      });
+    $('#topbar').mouseover(function() {
+      new_nav_container.find('.flipped-nav').removeClass('active');
+    })
+      
 
-		});
+    });
 
     </script>
   </s_t3>

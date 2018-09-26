@@ -18,7 +18,6 @@ jQuery(document).ready(function() {
   })();
 
   //  Adapt Nav Menu
-  //  15.01.01
   (function() {
     var trg = jQuery("#navigation .container").children("ul")[0];
     var list = [];
@@ -100,7 +99,9 @@ jQuery(document).ready(function() {
   //  Panel Adjust
   //  This block must be after "Fill Side Off"
   (function() {
-    jQuery("#sidebar").children(".panel").addClass("hidden-xs")
+    jQuery("#sidebar .row").children(".panel").addClass("hidden-xs");
+    jQuery("#sidebar .row").children(".panel").addClass("col-sm-12");
+    jQuery("#sidebar .row").children(".module_plugin").addClass("col-xs-4 col-sm-12");
   })();
 
   //  Toggle Side Off
