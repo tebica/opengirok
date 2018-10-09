@@ -12,7 +12,6 @@
 
   <link href="./images/superfish-custom.css" rel="stylesheet" />
   <link href="./style.css" rel="stylesheet" />
-  <link href="http://earlybird.kr/temp/s.css" rel="stylesheet">
   <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -23,7 +22,7 @@
 <body>
   <s_t3>
 
-    <div id="navbar-mobile" class="navbar navbar-static-top">
+    <div id="navbar-mobile" class="navbar navbar-fixed-top">
         <div style="line-height:60px" class="navbar-header pull-left">
             <a class="btn btn-default navbar-toggle collapsed navbar-toggle-custom" style="color:#333"
                data-toggle="collapse"
@@ -31,7 +30,8 @@
                 <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
             </a>
         </div>
-        <a class="btn btn-default navbar-toggle collapsed search-btn" data-toggle="collapse" data-target=".search-form"><span class="glyphicon glyphicon-search form-control-search"></span>
+			
+        <a class="btn btn-default navbar-toggle collapsed search-btn" data-toggle="collapse" data-target="#mobile-search"><span class="glyphicon glyphicon-search form-control-search"></span>
 			</a>
         <div align="center">
 					<a class="logo-title" href="/">
@@ -43,9 +43,13 @@
               
             </ul>
         </div>
+    <div id="navbar-mobile-apply" class="">
+			<a href="http://www.opengirok.or.kr/56">후원회원 가입하기 <span class="glyphicon glyphicon-log-in"></span> </a>
+		</div>
     </div>
+
 		
-    <div class="collapse navbar-collapse hidden-lg search-form">
+    <div id="mobile-search" class="collapse navbar-collapse hidden-lg">
       <form class="mobile_search hidden-sm hidden-md hidden-lg" role="search" action="/" method="GET">
       <div class="input-group">
       <input type="text" class="form-control" name="mobile-search" placeholder="검색하기..."/>
@@ -119,7 +123,7 @@
                 <div class="list-group">
                   <s_list_rep>
                     <a class="list-group-item" href="[##_list_rep_link_##]">
-                      [##_list_rep_regdate_##] - [##_list_rep_title_##] <!--by [##_list_rep_author_##]-->
+                      [##_list_rep_title_##] - <span class="list-item-date">[##_list_rep_regdate_##]</span><!--by [##_list_rep_author_##]-->
                       <span class="badge pull-right">[##_list_rep_rp_cnt_##]</span>
                     </a>
                   </s_list_rep>
@@ -482,13 +486,13 @@
         <div class="row">
           <div class="img-container">
             <div class="img-wrap">
-              <img class="project-img" src="https://tistory3.daumcdn.net/tistory/2490786/skin/images/bottom1.png" />
+              <a href="http://www.podbbang.com/ch/11525" target="_blank"><img class="project-img" src="https://tistory3.daumcdn.net/tistory/2490786/skin/images/bottom1.png" /></a>
             </div>
             <div class="img-wrap">
-              <img class="project-img" src="https://tistory3.daumcdn.net/tistory/2490786/skin/images/bottom2.png" />
+              <a href="https://sewolarchive.org/" target="_blank"><img class="project-img" src="https://tistory3.daumcdn.net/tistory/2490786/skin/images/bottom2.png" /></a>
             </div>
             <div class="img-wrap">
-              <img class="project-img" src="https://tistory3.daumcdn.net/tistory/2490786/skin/images/bottom3.png" />
+              <a href="http://www.nukeknock.net/" target="_blank"><img class="project-img" src="https://tistory3.daumcdn.net/tistory/2490786/skin/images/bottom3.png" /></a>
             </div>
           </div>
         </div>
@@ -503,7 +507,7 @@
         </div>
         <div class="col-md-6 ft-top-md">
           <span class="title">투명사회를 위한 정보공개센터</span> <br/>
-            <i class="fa fa-map-marker" aria-hidden="true"></i> (우)03100 서울시 종로구 이화동 135번지(새주소 : 이화장길 20) 삼영빌딩 2층 <br/>
+            <i class="fa fa-map-marker" aria-hidden="true"></i> (우)03100 서울시 종로구 이화장길 20 삼영빌딩 2층 <br/>
             <i class="fa fa-mobile" aria-hidden="true"></i> 전화 02-2039-8361<br/>
             <i class="fa fa-fax" aria-hidden="true"></i> 팩스 : 02-6919-2039<br/>
             <i class="fa fa-envelope" aria-hidden="true"></i> 이메일 cfoi@opengirok.or.kr <br/>
@@ -603,7 +607,14 @@
     $('#topbar').mouseover(function() {
       new_nav_container.find('.flipped-nav').removeClass('active');
     })
-      
+			
+$('#mobile-search').on('hidden.bs.collapse', function () {
+  $('#navbar-mobile-apply').show()
+})
+
+$('#mobile-search').on('show.bs.collapse', function () {
+  $('#navbar-mobile-apply').hide()
+})
 
     });
 
