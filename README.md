@@ -1,7 +1,7 @@
 # 정보공개센터 스킨 저장소
 
-## 작업 공간
-- http://rmspgkdi.tistory.com/
+## 정보공개센터 홈페이지
+- https://www.opengirok.or.kr/
 
 ## 사용 라이브러리
  - bootstrap3 (bootstrap4 는 IE 10+ 지원)
